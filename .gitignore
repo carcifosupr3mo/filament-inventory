@@ -216,3 +216,37 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Righe da AGGIUNGERE in fondo al .gitignore che GitHub ha già creato.
+# Non sostituire il file: aggiungi solo queste righe alla fine.
+
+# ---------- Segreti ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+
+# ---------- Database e dump ----------
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+
+# ---------- Backup e archivi ----------
+backup/
+backups/
+*.tar
+*.tar.gz
+
+# ---------- Log ----------
+*.log
+logs/
+
+# ---------- Editor e sistema operativo ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
