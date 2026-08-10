@@ -1,0 +1,37 @@
+name: Feature request
+description: Proponi una nuova funzionalità o un miglioramento
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema da risolvere
+      description: Quale limite attuale rende utile questa funzionalità.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Soluzione proposta
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Alternative considerate
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priorita
+    attributes:
+      label: Quanto è importante
+      options:
+        - Nice to have
+        - Utile
+        - Blocca il mio utilizzo
+    validations:
+      required: true
