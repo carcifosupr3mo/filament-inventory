@@ -1,0 +1,62 @@
+name: Bug report
+description: Segnala un comportamento non corretto
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per la segnalazione. Non inserire password, token, chiavi API o indirizzi IP privati nei log che incolli.
+
+  - type: textarea
+    id: descrizione
+    attributes:
+      label: Descrizione
+      description: Cosa succede di sbagliato.
+      placeholder: All'avvio il servizio termina senza scrivere nulla nei log.
+    validations:
+      required: true
+
+  - type: textarea
+    id: riproduzione
+    attributes:
+      label: Passi per riprodurre
+      description: I passi minimi per ottenere di nuovo il problema.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: atteso
+    attributes:
+      label: Comportamento atteso
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Log o messaggi di errore
+      description: Verranno formattati automaticamente come codice.
+      render: shell
+    validations:
+      required: false
+
+  - type: input
+    id: versione
+    attributes:
+      label: Versione o commit
+      placeholder: v1.2.0 oppure 4f3a1c9
+    validations:
+      required: false
+
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      placeholder: Ubuntu 24.04, Python 3.12, Docker 27
+    validations:
+      required: false
