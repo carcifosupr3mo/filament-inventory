@@ -97,7 +97,12 @@ PostgreSQL	interna	no
 MQTT verso stampante	8883 (uscita)	—
 FTPS verso stampante	990 (uscita)	—
 Sicurezza
-Nessuna autenticazione, per scelta progettuale. Il sistema è accessibile solo dalla LAN, con un unico operatore e nessun port forwarding verso Internet. Aggiungere un layer di login avrebbe introdotto complessità senza aumentare la sicurezza reale in questo scenario. Non esporre questo servizio su Internet senza prima aggiungere autenticazione.
+- **Autenticazione a password unica** con hashing Argon2, sessione via cookie firmato a scadenza configurabile e rate limiting sul login.
+- **Access code della stampante cifrato** a riposo nel database, derivando la chiave dalla secret key applicativa.
+- Credenziali solo in variabili d'ambiente, mai nel codice.
+- Nessuna porta applicativa raggiungibile dall'esterno della rete locale.
+- Backup del database con rotazione automatica.
+Il sistema è accessibile solo dalla LAN, con un unico operatore e nessun port forwarding verso Internet. Aggiungere un layer di login avrebbe introdotto complessità senza aumentare la sicurezza reale in questo scenario. Non esporre questo servizio su Internet senza prima aggiungere autenticazione.
 Credenziali della stampante e del database solo in variabili d'ambiente, mai nel codice.
 Nessuna porta applicativa raggiungibile dall'esterno della rete locale.
 Backup del database con rotazione automatica.
